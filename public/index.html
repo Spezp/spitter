@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
+
+    <meta charset="utf-8"/>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
 
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <!-- External CSS -->
     <link rel="stylesheet" href="vendor/normalize-4.1.1.css" type="text/css" />
 
@@ -14,6 +18,9 @@
     <!-- New Tweet Stylesheet -->
     <link rel="stylesheet" href="styles/nav.css" type="text/css" />
 
+    <!-- Tweet Stylesheet -->
+    <link rel="stylesheet" href="styles/tweet.css" type="text/css" />
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,500i,700" rel="stylesheet">
 
@@ -21,12 +28,7 @@
     <link rel="stylesheet" href="styles/layout.css" type="text/css" />
 
     <!-- External JS -->
-    <script type="text/javascript" src="vendor/jquery-2.2.3.min.js"></script>
 
-    <!-- App JS -->
-    <script type="text/javascript" src="scripts/app.js"></script>
-    <!-- Character Counter JS -->
-    <script type="text/javascript" src="scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
@@ -49,11 +51,37 @@
           <span class="counter">140</span>
         </form>
       </section>
+      <!-- Tweets render -->
+      <section class="tweet-container">
+        <section class="tweet-article">
 
-      <section class="all-tweets">
+          <header>
+            <img class="avatar" src="./images/avatar.png"/><h2>Spanky McPherson</h2>
+            <p class="handle">@Spanky</p>
+          </header>
 
+          <article>
+            <p>Spit your venom.</p>
+          </article>
+
+          <footer>
+            <p class="whenPosted">10 days ago</p>
+            <div class="social"><a href="#"><i class="far fa-flag"></i></a><a href="#"><i class="fas fa-retweet"></i></a><a href="#"><i class="fas fa-heart"></i></a>
+            </div>
+          </footer>
+
+        </section>
       </section>
-
     </main>
+
+    <!-- Jquery!! -->
+    <script type="text/javascript" src="vendor/jquery-2.2.3.min.js"></script>
+
+    <!-- App JS -->
+    <script type="text/javascript" src="scripts/app.js"></script>
+
+    <!-- Character Counter JS -->
+    <script type="text/javascript" src="scripts/composer-char-counter.js"></script>
+
   </body>
 </html>

@@ -27,13 +27,13 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
- .container {
-  margin: auto;
-  padding-top: 140px;
-  padding-bottom: 80px;
-  width: 450px;
-  background-color: #fff;
- }
+.container {
+margin: auto;
+padding-top: 70px;
+padding-bottom: 80px;
+width: 450px;
+background-color: #fff;
+}
  /*
  Google Fonts linked in HTML
  ##  font-family: 'Roboto', sans-serif;
