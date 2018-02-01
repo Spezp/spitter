@@ -14,8 +14,11 @@
     "body-parser": "^1.15.2",
     "chance": "^1.0.2",
     "express": "^4.13.4",
+    "flash-message": "^2.0.1",
     "font-awesome": "^4.7.0",
-    "md5": "^2.1.0"
+    "md5": "^2.1.0",
+    "sass": "^1.0.0-beta.4",
+    "tingle.js": "^0.13.0"
   },
   "devDependencies": {
     "nodemon": "^1.9.2"

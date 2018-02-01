@@ -1,5 +1,6 @@
 
-// Character Counter. Changes ".counter" class styling to red when numbers become negative
+// Character Counter. Changes ".counter" class styling to red when
+// numbers become negative
 
 $("document").ready( function() {
   $("section form textarea").keyup( function() {

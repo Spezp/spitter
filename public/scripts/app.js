@@ -26,10 +26,26 @@ $("document").ready( function() {
 
   // Prevents newtweet from default event behaviour(sic)
   // POST tweet new tweet as string
+  // Checks for empty tweet or over 140 chars. Open tingle modul with message
   $(":submit").click( function( event ) {
     event.preventDefault();
     let tweetString = $("#tweet-form").serialize();
+    let count = $(".counter").text() - 140;
+    if(count === 0) {
+      modal.setContent("<h2 id='venomModal'>Empty tweet. Say something damnit</h2>");
+      modal.open();
+      return null;
+    }
+    console.log(Math.sign(count + 140));
+    console.log(count + 140);
+    if(Math.sign(count + 140) === -1) {
+      modal.setContent("<h2 id='venomModal'>Over 140 characters!</h2>");
+      modal.open();
+      return null;
+    }
     $.post( "/tweets", $( "#tweet-form" ).serialize() );
+    loadNewTweet();
+
   });
 
   // Determines how many days, or months, or years ago a post was made
@@ -98,19 +114,55 @@ $("document").ready( function() {
 
   // loops through tweets and calls creatTweeElemt for each tweet.
   // Takes return value and appends it to the tweets container.
-  function renderTweets(tweets) {
-    tweets.forEach( function(tweet) {
-      $('.tweet-container').append(createTweetElement(tweet));
-    });
+  function renderTweets(tweets, newtweet) {
+    if(newtweet) {
+         $(createTweetElement(tweets)).prependTo('.tweet-container').hide().slideDown();
+    } else {
+      tweets.forEach( function(tweet) {
+        $(createTweetElement(tweet)).prependTo('.tweet-container');
+      });
+    }
+    // Hover effect called after all tweets rendered
     hoverEffect();
   }
 
   let loadTweets = () => {
     $.getJSON("/tweets", (json) => {
-      renderTweets(json);
+      renderTweets(json, false);
     });
   };
 
+  let loadNewTweet = () => {
+    $.getJSON("/tweets", (json) => {
+      console.log(json[json.length -1]);
+      renderTweets(json[json.length - 1], true);
+    });
+  };
+
+// function call to load initial tweets
   loadTweets();
+
+  // Tingle Modal
+  //
+  var modal = new tingle.modal({
+    footer: false,
+    stickyFooter: false,
+    closeMethods: ['overlay', 'button', 'escape'],
+    closeLabel: "Close"
+    // cssClass: ['custom-class-1', 'custom-class-2'],
+    // onOpen: function() {
+    //     console.log('modal open');
+    // },
+    // onClose: function() {
+    //     console.log('modal closed');
+    // },
+    // beforeClose: function() {
+    //     // here's goes some logic
+    //     // e.g. save content before closing the modal
+    //     return true; // close the modal
+    //   return false; // nothing happens
+    // }
+  });
+
 
 });
