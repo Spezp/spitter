@@ -35,8 +35,11 @@
 
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
-      <img class="logo" src="images/bird.png">
-      <span class="header">Tweeter</span>
+      <div class="nav-gutter">
+        <img class="logo" src="images/bird.png">
+        <span class="header">Tweeter</span>
+        <button class="compose">Compose</button>
+      </div>
     </nav>
 
     <main class="container clearfix">
@@ -46,7 +49,7 @@
         <h2>Compose Tweet</h2>
         <form>
           <textarea id="tweet-form" name="text" placeholder="What are you humming about?"></textarea>
-          <input type="submit" value="Tweet">
+          <input id="post-tweet" type="submit" value="Tweet">
           <span class="counter">140</span>
         </form>
       </section>

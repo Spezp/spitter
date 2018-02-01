@@ -27,7 +27,7 @@ $("document").ready( function() {
   // Prevents newtweet from default event behaviour(sic)
   // POST tweet new tweet as string
   // Checks for empty tweet or over 140 chars. Open tingle modul with message
-  $(":submit").click( function( event ) {
+  $("#post-tweet").click( function( event ) {
     event.preventDefault();
     let tweetString = $("#tweet-form").serialize();
     let count = $(".counter").text() - 140;
@@ -46,6 +46,10 @@ $("document").ready( function() {
     $.post( "/tweets", $( "#tweet-form" ).serialize() );
     loadNewTweet();
 
+  });
+
+  $(".compose").click( function( event ) {
+    $(".new-tweet").slideToggle();
   });
 
   // Determines how many days, or months, or years ago a post was made
@@ -116,7 +120,7 @@ $("document").ready( function() {
   // Takes return value and appends it to the tweets container.
   function renderTweets(tweets, newtweet) {
     if(newtweet) {
-         $(createTweetElement(tweets)).prependTo('.tweet-container').hide().slideDown();
+      $(createTweetElement(tweets)).prependTo('.tweet-container').hide().slideDown();
     } else {
       tweets.forEach( function(tweet) {
         $(createTweetElement(tweet)).prependTo('.tweet-container');
@@ -139,7 +143,7 @@ $("document").ready( function() {
     });
   };
 
-// function call to load initial tweets
+  // function call to load initial tweets
   loadTweets();
 
   // Tingle Modal

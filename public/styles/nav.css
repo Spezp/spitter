@@ -1,3 +1,8 @@
+.nav-gutter {
+  width: 60%;
+  margin: auto;
+}
+
 #nav-bar {
   width: 100%;
   background-color: #AA00FF;
@@ -21,4 +26,12 @@
 
 #nav-bar .logo, #nav-bar .header {
   float: left;
+}
+
+.compose {
+  float: right;
+  margin-top: 1.5em;
+  border-radius: 5px;
+  border-style: none;
+  padding: 8px 15px;
 }
