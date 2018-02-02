@@ -17,6 +17,7 @@
     "flash-message": "^2.0.1",
     "font-awesome": "^4.7.0",
     "md5": "^2.1.0",
+    "mongodb": "^2.2.34",
     "sass": "^1.0.0-beta.4",
     "tingle.js": "^0.13.0"
   },

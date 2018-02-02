@@ -115,7 +115,6 @@ $("document").ready( function() {
 
     return template.join('');
   };
-
   // loops through tweets and calls creatTweeElemt for each tweet.
   // Takes return value and appends it to the tweets container.
   function renderTweets(tweets, newtweet) {
