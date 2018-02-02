@@ -7,6 +7,7 @@
   border-color: #C7C7C7FF;
   border-style: solid;
   border-width: 1px;
+  display: none;
 }
 
 .new-tweet h2 {

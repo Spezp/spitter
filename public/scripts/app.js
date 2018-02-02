@@ -97,7 +97,7 @@ $("document").ready( function() {
         `</header>`,
 
         `<article>`,
-          `<p>${tweetDB.content.text}</p>`,
+          `<p id="tweet-string" >${tweetDB.content.text}</p>`,
         `</article>`,
 
           `<footer>`,
@@ -118,15 +118,23 @@ $("document").ready( function() {
   // loops through tweets and calls creatTweeElemt for each tweet.
   // Takes return value and appends it to the tweets container.
   function renderTweets(tweets, newtweet) {
+    console.log(tweets);
+    let contentAll = '';
     if(newtweet) {
       $(createTweetElement(tweets)).prependTo('.tweet-container').hide().slideDown();
+      contentAll = tweets.content.text;
     } else {
       tweets.forEach( function(tweet) {
         $(createTweetElement(tweet)).prependTo('.tweet-container');
+        console.log(tweet.content.text);
+        
+        contentAll = tweet.content.text;
       });
     }
     // Hover effect called after all tweets rendered
     hoverEffect();
+    contentAll = String(contentAll);
+    $("#tweet-string").text(contentAll);
   }
 
   let loadTweets = () => {
