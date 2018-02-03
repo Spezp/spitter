@@ -1,0 +1,23 @@
+@import "utilities/_variables.sass"
+html
+  box-sizing: border-box
+
+*, *:before, *:after
+  box-sizing: inherit
+
+body
+  margin: 0
+  color: $primaryFontColor
+  font-family: $roboto
+  .container
+    margin: auto
+    padding:
+      top: 70px
+      bottom: 80px
+    max-width: 450px
+    background-color: $contentBG
+  .clearfix::after
+    content: ""
+    clear: both
+    display: table
+    

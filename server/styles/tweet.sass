@@ -1,0 +1,57 @@
+@import "utilities/_variables.sass"
+
+.tweet-article
+  background-color: $contentBG
+  max-width: 100%
+  margin: 2em 2em auto
+  +border-styling(10px, $border)
+  opacity: 0.75
+
+a
+  color: $primaryFontColor
+
+.tweet-article
+  p, h2
+    opacity: 0.75
+
+  header
+    background-color: $tweetBG
+    padding: 1em
+    border-top-right-radius: 10px
+    border-top-left-radius: 10px
+
+  h2 
+    padding-left: 5px
+    margin: 0 auto
+    display: inline-block
+    vertical-align: top
+
+  img 
+    display: inline-block
+    width: 50px
+    height: 50px
+    border-radius: 10px
+
+  footer p
+    margin: 0
+    display: inline-block
+    float: left
+
+  footer .social
+    text-align: right
+
+  footer i
+    display: inline-block
+
+  article
+    padding: 1em
+
+.social
+  opacity: 0
+  a
+    padding-left: 5px
+
+
+
+
+

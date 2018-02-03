@@ -56,8 +56,10 @@ $("document").ready( function() {
   // and returns a relevant string
   const datePosted = function(ms) {
     var date = Math.floor((Date.now() - ms) / 86400000);
+    console.log(date);
     if(date >= 365) {
       date = Math.floor(date / 365);
+      console.log(date)
       if(date > 1) {
         return `${date} years ago`;
       } else {
@@ -65,21 +67,35 @@ $("document").ready( function() {
       }
 
     } else if( date >= 30) {
+
+      date = date / 30;
+
       if(date > 1) {
         return `${date} months ago`;
       } else {
         return `${date} month ago`;
       }
+
     } else if( date >= 7) {
+
+      date / 7;
+
+      if(date > 1) {
+        return `${date} weeks ago`;
+      } else {
+        return `${date} week ago`;
+      }
+
+    } else if( date >= 1 ) {
+      
       if(date > 1) {
         return `${date} days ago`;
       } else {
         return `${date} day ago`;
       }
-    } else if( date < 1 ) {
+    } else if (date < 1) {
       return `Today`;
     }
-    return dateStr;
   };
 
   // Creates new Tweet based off of template. The array is for visual
