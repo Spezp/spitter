@@ -8,18 +8,16 @@
   border-width: 1px;
   border-radius: 10px;
   display: none; }
-
-h2 {
-  margin: 0 0 0.5em;
-  line-height: 1em;
-  float: left;
-  max-width: 100%;
-  border-bottom-style: solid;
-  border-bottom-width: 1px; }
-
-textarea {
-  padding: 0.25em;
-  width: 100%; }
+  .new-tweet h2 {
+    margin: 0 0 0.5em;
+    line-height: 1em;
+    float: left;
+    max-width: 100%;
+    border-bottom-style: solid;
+    border-bottom-width: 1px; }
+  .new-tweet textarea {
+    padding: 0.25em;
+    width: 100%; }
 
 #post-tweet {
   margin-top: 0.5em;
