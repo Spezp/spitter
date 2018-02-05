@@ -1,9 +1,5 @@
-// Jquery ------
-
 $("document").ready( function() {
 
-  // Hover Effect
-  // Tweet elements become fully opaque
   let hoverEffect = () => {
     $(".tweet-article").hover( function() {
 
@@ -24,14 +20,14 @@ $("document").ready( function() {
     });
   };
 
-  // Prevents newtweet from default event behaviour(sic)
-  // POST tweet new tweet as string
   // Checks for empty tweet or over 140 chars. Open tingle modul with message
   $("#post-tweet").click( function( event ) {
     event.preventDefault();
     let tweetString = $("#tweet-form").serialize();
     let count = $(".counter").text() - 140;
-    if(count === 0) {
+    let isContent = $("textarea").val();
+    
+    if(count === 0 || !isContent.trim()) {
       modal.setContent("<h2 id='venomModal'>Cotton mouthed? Say something!</h2>");
       modal.open();
       return null;
@@ -41,8 +37,12 @@ $("document").ready( function() {
       modal.open();
       return null;
     }
-    $.post( "/tweets", $( "#tweet-form" ).serialize() );
-    loadNewTweet();
+    
+    $.post( "/tweets", $( "#tweet-form" ).serialize(), function() {
+      loadNewTweet();
+    });
+      
+    
 
   });
 
@@ -54,8 +54,7 @@ $("document").ready( function() {
   $("#mobile-compose").click(function (event) {
     $(".new-tweet").slideToggle();
   });
-  // Determines how many days, or months, or years ago a post was made
-  // and returns a relevant string
+
   const datePosted = function(ms) {
     var date = Math.floor((Date.now() - ms) / 86400000);
 
@@ -100,8 +99,7 @@ $("document").ready( function() {
     }
   };
 
-  // Creates new Tweet based off of template. The array is for visual
-  // organization. It is joined before befor being returned.
+  // Creates new Tweet based off of template var
   const createTweetElement = function(tweetDB) {
     
     let template = [
@@ -134,10 +132,8 @@ $("document").ready( function() {
     return template.join('');
   };
   // loops through tweets and calls creatTweeElemt for each tweet.
-  // Unless newtweet === true in which case there is no need for a loop.
   // Takes return value and appends it to the tweets container.
   function renderTweets(tweets, newtweet) {
-    console.log(tweets);
     let contentAll = '';
 
     if(newtweet) {
@@ -147,7 +143,6 @@ $("document").ready( function() {
     } else {
       tweets.forEach( function(tweet) {
         $(createTweetElement(tweet)).prependTo('.tweet-container');
-        console.log(tweet.content.text);
         
         contentAll = tweet.content.text;
         $("#tweet-string").text(contentAll);
@@ -159,17 +154,14 @@ $("document").ready( function() {
     $("#tweet-string").text(contentAll);
   }
 
-  // Retreives past data and passes data to renderTweets
   let loadTweets = () => {
     $.getJSON("/tweets", (json) => {
       renderTweets(json, false);
     });
   };
 
-  // Retreives new data and passes to renderTweets
   let loadNewTweet = () => {
     $.getJSON("/tweets", (json) => {
-      console.log(json[json.length -1]);
       renderTweets(json[json.length - 1], true);
     });
   };
