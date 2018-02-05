@@ -8,7 +8,7 @@ Spitter is a full stack web application built with Node and Express. Using AJAX 
 !["Compose Messages"](https://github.com/Spezp/spitter/blob/master/docs/desktop-compose.png?raw=true)
 !["Input validation"](https://github.com/Spezp/spitter/blob/master/docs/desktop-modal.png?raw=true)
 !["Scroll"](https://github.com/Spezp/spitter/blob/master/docs/desktop-scroll.png?raw=true)
-!["Mobile Modal"](https://github.com/Spezp/spitter/blob/master/docs/mobile-modal-cropped.png?raw=true) !["Mobile"](https://github.com/Spezp/spitter/blob/master/docs/mobile-cropped.png?raw=true) !["Mobile modal"](https://github.com/Spezp/spitter/blob/master/docs/mobile-modal-cropped.png?raw=true)
+!["Mobile Modal"](https://github.com/Spezp/spitter/blob/master/docs/mobile-modal-cropped.png?raw=true | width=150) !["Mobile"](https://github.com/Spezp/spitter/blob/master/docs/mobile-cropped.png?raw=true) !["Mobile modal"](https://github.com/Spezp/spitter/blob/master/docs/mobile-modal-cropped.png?raw=true)
 ## Dependencies
 
 - Node.js
