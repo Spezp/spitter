@@ -1,5 +1,5 @@
 .new-tweet {
-  background-color: #F0F0F0FF;
+  background-color: #fbdeff;
   max-width: 100%;
   margin: 2em 2em auto;
   padding: 1em;
@@ -19,14 +19,14 @@
     padding: 0.25em;
     width: 100%; }
 
-#post-tweet {
+.post-button {
   margin-top: 0.5em;
   color: #244751; }
-  #post-tweet border {
+  .post-button border {
     width: 1px;
     color: #C7C7C7FF;
     style: solid;
-    background: linear-gradient(to bottom, #ffffff, #F0F0F0FF); }
+    background: linear-gradient(to bottom, #fff, #F0F0F0FF); }
 
 .counter {
   float: right;

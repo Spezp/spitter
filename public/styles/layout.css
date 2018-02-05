@@ -7,13 +7,14 @@ html {
 body {
   margin: 0;
   color: #244751;
-  font-family: "Roboto", sans-serif; }
+  font-family: "Roboto", sans-serif;
+  background-color: #fbdeff; }
   body .container {
     margin: auto;
     padding-top: 70px;
     padding-bottom: 80px;
     max-width: 450px;
-    background-color: #ffffff; }
+    background-color: #fff; }
   body .clearfix::after {
     content: "";
     clear: both;

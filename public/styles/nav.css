@@ -16,7 +16,7 @@
   font-size: 2em; }
 #nav-bar .logo {
   height: 80px;
-  max-width: 80px;
+  max-width: 120px;
   padding-right: 10px; }
 #nav-bar .logo, #nav-bar .header {
   float: left; }
@@ -27,5 +27,18 @@
   border-radius: 5px;
   border-style: none;
   padding: 8px 15px; }
+
+#compose {
+  display: none; }
+
+@media only screen and (max-width: 785px) {
+  #compose {
+    display: block; }
+
+  #desktop-compose {
+    display: none; }
+
+  .header {
+    display: none; } }
 
 /*# sourceMappingURL=nav.css.map */

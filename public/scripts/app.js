@@ -36,8 +36,6 @@ $("document").ready( function() {
       modal.open();
       return null;
     }
-    console.log(Math.sign(count + 140));
-    console.log(count + 140);
     if(Math.sign(count + 140) === -1) {
       modal.setContent("<h2 id='venomModal'>Over 140 characters!</h2>");
       modal.open();
@@ -50,16 +48,20 @@ $("document").ready( function() {
 
   $(".compose").click( function( event ) {
     $(".new-tweet").slideToggle();
+    $("#tweet-form").focus();
   });
-
+  
+  $("#mobile-compose").click(function (event) {
+    $(".new-tweet").slideToggle();
+  });
   // Determines how many days, or months, or years ago a post was made
   // and returns a relevant string
   const datePosted = function(ms) {
     var date = Math.floor((Date.now() - ms) / 86400000);
-    console.log(date);
+
     if(date >= 365) {
       date = Math.floor(date / 365);
-      console.log(date)
+
       if(date > 1) {
         return `${date} years ago`;
       } else {
@@ -101,19 +103,19 @@ $("document").ready( function() {
   // Creates new Tweet based off of template. The array is for visual
   // organization. It is joined before befor being returned.
   const createTweetElement = function(tweetDB) {
-
+    
     let template = [
 
       `<section class="tweet-article">`,
 
         `<header>`,
-          `<img class="avatar" src="${tweetDB.user.avatars.small}">`,
+          `<img class="avatar" alt="${tweetDB.user.handle}" src="${tweetDB.user.avatars.small}">`,
           `<h2>${tweetDB.user.name}</h2>`,
           `<p class="handle">${tweetDB.user.handle}</p>`,
         `</header>`,
 
         `<article>`,
-          `<p id="tweet-string" >${tweetDB.content.text}</p>`,
+          `<p id="tweet-string" ></p>`,
         `</article>`,
 
           `<footer>`,
@@ -132,19 +134,23 @@ $("document").ready( function() {
     return template.join('');
   };
   // loops through tweets and calls creatTweeElemt for each tweet.
+  // Unless newtweet === true in which case there is no need for a loop.
   // Takes return value and appends it to the tweets container.
   function renderTweets(tweets, newtweet) {
     console.log(tweets);
     let contentAll = '';
+
     if(newtweet) {
       $(createTweetElement(tweets)).prependTo('.tweet-container').hide().slideDown();
-      contentAll = tweets.content.text;
+      contentAll = tweets.content.text
+      $("#tweet-string").text(contentAll);
     } else {
       tweets.forEach( function(tweet) {
         $(createTweetElement(tweet)).prependTo('.tweet-container');
         console.log(tweet.content.text);
         
         contentAll = tweet.content.text;
+        $("#tweet-string").text(contentAll);
       });
     }
     // Hover effect called after all tweets rendered
@@ -153,12 +159,14 @@ $("document").ready( function() {
     $("#tweet-string").text(contentAll);
   }
 
+  // Retreives past data and passes data to renderTweets
   let loadTweets = () => {
     $.getJSON("/tweets", (json) => {
       renderTweets(json, false);
     });
   };
 
+  // Retreives new data and passes to renderTweets
   let loadNewTweet = () => {
     $.getJSON("/tweets", (json) => {
       console.log(json[json.length -1]);
@@ -176,20 +184,7 @@ $("document").ready( function() {
     stickyFooter: false,
     closeMethods: ['overlay', 'button', 'escape'],
     closeLabel: "Close"
-    // cssClass: ['custom-class-1', 'custom-class-2'],
-    // onOpen: function() {
-    //     console.log('modal open');
-    // },
-    // onClose: function() {
-    //     console.log('modal closed');
-    // },
-    // beforeClose: function() {
-    //     // here's goes some logic
-    //     // e.g. save content before closing the modal
-    //     return true; // close the modal
-    //   return false; // nothing happens
-    // }
   });
 
-
+  
 });

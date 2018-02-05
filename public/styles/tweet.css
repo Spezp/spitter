@@ -1,5 +1,5 @@
 .tweet-article {
-  background-color: #ffffff;
+  background-color: #fff;
   max-width: 100%;
   margin: 2em 2em auto;
   -webkit-border-radius: 10px;
@@ -17,7 +17,7 @@ a {
 .tweet-article p, .tweet-article h2 {
   opacity: 0.75; }
 .tweet-article header {
-  background-color: #F0F0F0FF;
+  background-color: #fbdeff;
   padding: 1em;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px; }
@@ -42,7 +42,7 @@ a {
   margin: 0 auto;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
-  background-color: #F0F0F0FF;
+  background-color: #fbdeff;
   padding: 1em;
   width: 100%; }
 .tweet-article footer p {
@@ -58,5 +58,20 @@ a {
   opacity: 0; }
   .social a {
     padding-left: 5px; }
+
+.img-container {
+  max-height: 100%; }
+
+@media only screen and (max-width: 785px) {
+  .tweet-article div {
+    display: inline-block;
+    max-height: 100%; }
+  .tweet-article header .handle {
+    float: right;
+    font-size: 0.5em;
+    vertical-align: text-bottom; }
+  .tweet-article h2 {
+    float: none;
+    font-size: 1em; } }
 
 /*# sourceMappingURL=tweet.css.map */

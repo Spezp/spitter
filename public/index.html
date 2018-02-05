@@ -36,20 +36,23 @@
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
       <div class="nav-gutter">
-        <img class="logo" src="images/bird.png">
-        <span class="header">Tweeter</span>
-        <button class="compose">Compose</button>
+        <img class="logo" src="images/vamp-white.png">
+        <span class="header">s p i t t e r</span>
+        <button class="compose" id="desktop-compose">Compose</button>
+        <button id="compose" class="compose"><i class="fas fa-edit"></i></button>
       </div>
     </nav>
-
-    <main class="container clearfix">
+    
+    <main class="container">
 
       <!-- Tweeter text box limited to 140 chars -->
+
+
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
+        <h2>Compose Venom</h2>
         <form>
-          <textarea id="tweet-form" name="text" placeholder="What are you humming about?"></textarea>
-          <input id="post-tweet" type="submit" value="Tweet">
+          <textarea id="tweet-form" name="text" placeholder="Spit your venom..."></textarea>
+          <input id="post-tweet" class="post-button" type="submit" value="Spit">
           <span class="counter">140</span>
         </form>
       </section>
