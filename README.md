@@ -23,4 +23,4 @@ Spitter is a full stack web application built with Node and Express. Using AJAX 
 # Getting Started
 
 - Install all dependecies (using the `npm install` command).
-- Run the development web server using the `node express_server.js` command.
+- Run the development web server using the `npm run local` command.
