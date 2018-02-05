@@ -1,17 +1,23 @@
-# Tweeter Project
+# Spitter
 
-Tweeter is a simple, single-page Twitter clone.
+Spitter is a full stack web application built with Node and Express. Using AJAX "tweets" can be posted and stored in MongoDB documents.
+ This twitter clone is stylled using Sass and uses Jquery for AJAX, DOM manipulation and animation. 
+ The app is built to be fully functional for mobile users.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
 
-## Getting Started
-
-1. Fork this repository, then clone your fork of this repository.
-2. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
-4. Go to <http://localhost:8080/> in your browser.
-
+!["Index of users shortened URLS"](https://github.com/Spezp/zombieApp/blob/master/docs/zombieapp-index.png?raw=true)
+!["Login page"](https://github.com/Spezp/zombieApp/blob/master/docs/zombieapp-login.png?raw=true)
+!["URL input"](https://github.com/Spezp/zombieApp/blob/master/docs/zombieapp-new-url.png?raw=true)
 ## Dependencies
 
+- Node.js
 - Express
-- Node 5.10.x or above
+- body-parser
+- Sass
+- chance
+- MongoDB
+
+# Getting Started
+
+- Install all dependecies (using the `npm install` command).
+- Run the development web server using the `node express_server.js` command.
