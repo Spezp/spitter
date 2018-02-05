@@ -1,13 +1,14 @@
 # Spitter
 
 Spitter is a full stack web application built with Node and Express. Using AJAX "tweets" can be posted and stored in MongoDB documents.
- This twitter clone is stylled using Sass and uses Jquery for AJAX, DOM manipulation and animation. 
+ This twitter clone is styllegitd using Sass and uses Jquery for AJAX, DOM manipulation and animation. 
  The app is built to be fully functional for mobile users.
 
 
-!["Index of users shortened URLS"](https://github.com/Spezp/zombieApp/blob/master/docs/zombieapp-index.png?raw=true)
-!["Login page"](https://github.com/Spezp/zombieApp/blob/master/docs/zombieapp-login.png?raw=true)
-!["URL input"](https://github.com/Spezp/zombieApp/blob/master/docs/zombieapp-new-url.png?raw=true)
+!["Compose Messages"](https://github.com/Spezp/spitter/blob/master/docs/desktop-compose.png?raw=true)
+!["Input validation"](https://github.com/Spezp/spitter/blob/master/docs/desktop-modal.png?raw=true)
+!["Scroll"](https://github.com/Spezp/spitter/blob/master/docs/desktop-scroll.png?raw=true)
+!["Mobile Modal"](https://github.com/Spezp/spitter/blob/master/docs/mobile-modal-cropped.png?raw=true) !["Mobile"](https://github.com/Spezp/spitter/blob/master/docs/mobile-cropped.png?raw=true) !["Mobile modal"](https://github.com/Spezp/spitter/blob/master/docs/mobile-modal-cropped.png?raw=true)
 ## Dependencies
 
 - Node.js
