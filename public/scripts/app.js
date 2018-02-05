@@ -32,7 +32,7 @@ $("document").ready( function() {
     let tweetString = $("#tweet-form").serialize();
     let count = $(".counter").text() - 140;
     if(count === 0) {
-      modal.setContent("<h2 id='venomModal'>Empty tweet. Say something damnit</h2>");
+      modal.setContent("<h2 id='venomModal'>Cotton mouthed? Say something!</h2>");
       modal.open();
       return null;
     }

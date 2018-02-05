@@ -39,6 +39,9 @@
     display: none; }
 
   .header {
-    display: none; } }
+    display: none; }
+
+  #nav-bar {
+    padding: 0 0.5em 0 0.5em; } }
 
 /*# sourceMappingURL=nav.css.map */

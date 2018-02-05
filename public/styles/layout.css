@@ -8,13 +8,14 @@ body {
   margin: 0;
   color: #244751;
   font-family: "Roboto", sans-serif;
-  background-color: #fbdeff; }
+  background-color: #4c444e; }
   body .container {
     margin: auto;
     padding-top: 70px;
     padding-bottom: 80px;
     max-width: 450px;
-    background-color: #fff; }
+    background-color: #fff;
+    box-shadow: 5px 10px 5px #000; }
   body .clearfix::after {
     content: "";
     clear: both;
