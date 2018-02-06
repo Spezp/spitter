@@ -30,14 +30,14 @@ $("document").ready( function() {
     if(count === 0 || !isContent.trim()) {
       $(".new-tweet").effect("shake");
       setTimeout( function() {
-        $(".warning").slideToggle();
+        $(".warning").hide().slideToggle();
       }, 1000);
       $('#tweet-form').attr("placeholder", "Cotton mouthed? Say something!");
       return null;
     } else if(Math.sign(count + 140) === -1) {
       $(".new-tweet").effect("shake");
       setTimeout(function () {
-        $(".warning").slideToggle();
+        $(".warning").hide().slideToggle();
       }, 1000);
       $('#tweet-form').attr("placeholder", "140 Characters Max!");
       return null;
