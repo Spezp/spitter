@@ -3,37 +3,29 @@
 
   <head>
 
-    <!-- Meta Information -->
     <meta charset="utf-8"/> 
     <title>Tweeter - Home Page</title>
 
-
-    <!-- Normalize Stylesheet -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
-    <!-- Navbar Stylesheet-->
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
-    <!-- New Tweet Stylesheet -->
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
 
-    <!-- Tweet Stylesheet -->
     <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,500i,700" rel="stylesheet" />
 
-    <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
-    <!-- Tingle Modal Stylesheet -->
     <link rel="stylesheet" href="/styles/tingle.css" />
+
+    <link rel="stylesheet" href="/styles/jquery-ui.js" />
 
   </head>
 
   <body>
 
-    <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
       <div class="nav-gutter">
         <img class="logo" src="images/vamp-white.png">
@@ -44,10 +36,7 @@
     </nav>
     
     <main class="container">
-
-      <!-- Tweeter text box limited to 140 chars -->
-
-
+      <div id="flash-message" class="warning"><p>invalid!</p></div>
       <section class="new-tweet">
         <h2>Compose Venom</h2>
         <form>
@@ -57,25 +46,24 @@
         </form>
       </section>
 
-      <!-- Tweets render -->
       <section class="tweet-container">
 
       </section>
     </main>
 
-    <!-- Jquery!! -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
-    <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
 
-    <!-- Character Counter JS -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
-    <!-- Font Awesome -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
-    <!-- Tingle Modal JS -->
     <script src="/scripts/tingle.js"></script>
+
+    <script src="/scripts/moment.js"></script>
+    
+    <script src="/scripts/jquery-ui.js"></script>
+
   </body>
 </html>

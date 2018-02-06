@@ -1,3 +1,23 @@
+.warning {
+  box-sizing: inherit;
+  background-color: #ff2f2f;
+  max-width: 100%;
+  margin: auto;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: #ff2f2f;
+  border-style: solid;
+  opacity: 0.75;
+  display: none; }
+
+.warning p {
+  max-width: 100%;
+  text-align: center;
+  color: #fff; }
+
 .new-tweet {
   background-color: #F0F0F0FF;
   max-width: 100%;

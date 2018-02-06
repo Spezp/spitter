@@ -28,14 +28,21 @@ $("document").ready( function() {
     let isContent = $("textarea").val();
     
     if(count === 0 || !isContent.trim()) {
-      modal.setContent("<h2 id='venomModal'>Cotton mouthed? Say something!</h2>");
-      modal.open();
+      $(".new-tweet").effect("shake");
+      setTimeout( function() {
+        $(".warning").slideToggle();
+      }, 1000);
+      $('#tweet-form').attr("placeholder", "Cotton mouthed? Say something!");
       return null;
-    }
-    if(Math.sign(count + 140) === -1) {
-      modal.setContent("<h2 id='venomModal'>Over 140 characters!</h2>");
-      modal.open();
+    } else if(Math.sign(count + 140) === -1) {
+      $(".new-tweet").effect("shake");
+      setTimeout(function () {
+        $(".warning").slideToggle();
+      }, 1000);
+      $('#tweet-form').attr("placeholder", "140 Characters Max!");
       return null;
+    } else {
+      $(".warning").hide();
     }
     
     $.post( "/tweets", $( "#tweet-form" ).serialize(), function() {
@@ -56,47 +63,8 @@ $("document").ready( function() {
   });
 
   const datePosted = function(ms) {
-    var date = Math.floor((Date.now() - ms) / 86400000);
-
-    if(date >= 365) {
-      date = Math.floor(date / 365);
-
-      if(date > 1) {
-        return `${date} years ago`;
-      } else {
-        return `${date} year ago`;
-      }
-
-    } else if( date >= 30) {
-
-      date = date / 30;
-
-      if(date > 1) {
-        return `${date} months ago`;
-      } else {
-        return `${date} month ago`;
-      }
-
-    } else if( date >= 7) {
-
-      date / 7;
-
-      if(date > 1) {
-        return `${date} weeks ago`;
-      } else {
-        return `${date} week ago`;
-      }
-
-    } else if( date >= 1 ) {
-      
-      if(date > 1) {
-        return `${date} days ago`;
-      } else {
-        return `${date} day ago`;
-      }
-    } else if (date < 1) {
-      return `Today`;
-    }
+    let postDate = new Date(ms);
+    return moment(postDate).fromNow();
   };
 
   // Creates new Tweet based off of template var
@@ -143,7 +111,6 @@ $("document").ready( function() {
     } else {
       tweets.forEach( function(tweet) {
         $(createTweetElement(tweet)).prependTo('.tweet-container');
-        
         contentAll = tweet.content.text;
         $("#tweet-string").text(contentAll);
       });

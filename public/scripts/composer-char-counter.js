@@ -8,7 +8,6 @@ $("document").ready( function() {
     let count = $(".counter").text();
     if(count < "0") {
       $(".counter").css("color", "red");
-      console.log(count);
     } else {
       $(".counter").css("color", "#244751");
     }
